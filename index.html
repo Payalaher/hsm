@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Hospital | Home </title>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/header.css">
+	<link rel="stylesheet" href="assets/css/footer.css">
+	<link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!--=== Header v1 ===-->
+		<div class="header-v1">
+			<!-- Topbar -->
+			<div class="topbar-v1">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<ul class="list-inline top-v1-contacts">
+								<li>
+									<i class="fa fa-envelope"></i> Email: <a href="mailto:unityhospital@gmail.com ">unityhospital@gmail.com</a>
+								</li>
+								<li>
+									<i class="fa fa-phone"></i> Contact no :  <a href="tel:8010358595"> 8010358595 </a> 
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- End Topbar -->
+
+			<!-- Navbar -->
+			<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="res-container">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-responsive-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+
+						<div class="navbar-brand">
+							<a href="index.html">
+								<img src="assets/img/logo/unity_white.jpg" alt="Logo">
+							</a>
+						</div>
+					</div><!--/end responsive container-->
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-responsive-collapse">
+						<div class="res-container">
+							<ul class="nav navbar-nav">
+
+								<!-- Collect the nav links, forms, and other content for toggling -->
+
+
+								<!-- Home  -->
+								<li class="mega-menu-fullwidth">
+									<a href="index.html">
+										HOME
+									</a>
+
+								</li>
+								<!-- End Home-->
+
+								<!-- About Us -->
+								<li class="mega-menu-fullwidth">	
+									<a href="about.html">
+										ABOUT US
+									</a>
+								</li>
+								<!-- End About us -->
+
+								<!-- Doctors -->
+								<li class="mega-menu-fullwidth">
+									<a href="doctors.html">
+										DOCTORS
+									</a>
+
+								</li>
+								<!-- End Doctors -->
+
+
+								<!-- Contact Us -->
+								<li class="mega-menu-fullwidth">
+									<a href="contact.html">
+										CONTACT US
+									</a>
+								</li>
+								<!-- End Contact us -->
+
+								<!-- login -->
+								<li class="mega-menu-fullwidth">
+									<a href="login.html">
+										LOGIN
+									</a>
+								</li>
+								<!-- End login -->
+
+								<!-- Appointment -->
+								<li class="mega-menu-fullwidth">
+									<a href="appointment.html">
+										BOOK APPOINTMENT
+									</a>
+
+								</li>
+								<!-- End Appointment -->
+
+							</ul>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Navbar -->
+
+
+
+		<!-- Slider -->
+		<div id="slide">
+			<div class="slideshow-container">
+				<div class="mySlides fade"> <img src="assets/img/slider/1.jpg" alt="Slider1" style="width:100%"> </div>
+				<div class="mySlides fade"> <img src="assets/img/slider/2.jpg" alt="Slider2" style="width:100%"> </div>
+				<div class="mySlides fade"> <img src="assets/img/slider/3.jpg" alt="Slider3" style="width:100%"> </div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <a class="next"
+					onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<br>
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+				<span class="dot" onclick="currentSlide(4)"></span>
+			</div>
+		</div>
+
+		<script>
+			var slideIndex = 0;
+			showSlides();
+			var slides, dots;
+
+			function showSlides() {
+				var i;
+				slides = document.getElementsByClassName("mySlides");
+				dots = document.getElementsByClassName("dot");
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				slideIndex++;
+				if (slideIndex > slides.length) { slideIndex = 1 }
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " active";
+				setTimeout(showSlides, 8000); // Change image every 8 seconds
+			}
+
+			function plusSlides(position) {
+				slideIndex += position;
+				if (slideIndex > slides.length) { slideIndex = 1 }
+				else if (slideIndex < 1) { slideIndex = slides.length }
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex - 1].style.display = "block";
+				dots[slideIndex - 1].className += " active";
+			}
+
+			function currentSlide(index) {
+				if (index > slides.length) { index = 1 }
+				else if (index < 1) { index = slides.length }
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[index - 1].style.display = "block";
+				dots[index - 1].className += " active";
+			}
+		</script>
+
+
+		<!-- End of Slider -->
+
+		<!--=== Welcome to Unity===-->
+		<div class="container content-md welcomeSection">
+			<div class="row section1">
+				<div class="col-md-6" style="margin-bottom: 40px;" style="border:2px solid black; background: green;">
+					<h2 class="title-v2">WELCOME TO <span style="color: #72c02c;"> UNITY </span></h2>
+					<p style="text-align: justify; font-size: 14px;">A state-of-the art modern facility in the heart of
+						the Gujarat state, it is spread over 10 acres and has a built-up area of over 440000 square
+						feet. Currently the hospital has 300+ beds with a capacity to expand to 400 beds.</p>
+					<p style="text-align: justify; font-size: 14px;">Unity Hospital, Ahmedabad is a tertiary care
+						flagship unit of the Unity Hospitals Group.The Hospital focuses on centres of excellence like
+						Cardiac Sciences, Neuro Sciences, Orthopaedics including Knee Replacement, Hip Replacement and
+						Spine Surgery, Cancer, Emergency Medicine and Solid Organ Transplants besides the complete range
+						of more than 35 allied medical disciplines under the same roof.</p>
+					<p style="text-align: justify; font-size: 14px;"> Unity Hospital, Ahmedabad provides holistic
+						healthcare that includes prevention, treatment, rehabilitation and health education for
+						patients, their families and clients by touching their lives.</p> <br>
+					<a href="about.html" class="btn-u btn-brd btn-brd-hover">Read More</a>
+				</div>
+				<div class="col-md-6 overflow-h">
+					<img style="border-radius: 50px; margin-left: 30px;" src="assets/img/bg/1.jpg" alt="">
+				</div>
+			</div>
+		</div>
+		<!--=== End About Us ===-->
+
+		<!--=== Footer ===-->
+		<div class="footer-v1">
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<!-- About -->
+						<div class="col-md-4 md-margin-bottom-40">
+							<a href="index.html"><img id="logo-footer" class="footer-logo"
+									src="assets/img/logo/unity_white.jpg" alt=""></a>
+							<p>At Unity Hospital, we are convinced that 'quality' and 'lowest cost' are not mutually
+								exclusive when it comes to healthcare delivery.</p>
+							<p>Our mission is to deliver high quality, affordable healthcare services to the broader
+								population in India.</p>
+						</div><!--/col-md-3-->
+						<!-- End About -->
+
+						<!-- Link List -->
+						<div class="col-md-3" style="margin-bottom: 40px;">
+							<div class="headline">
+								<h2>Useful Links</h2>
+							</div>
+							<ul class="list-unstyled link-list">
+								<li><a href="about.html">About us</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="contact.html">Contact us</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="appointment.html">Book Appointment</a><i class="fa fa-angle-right"></i>
+								</li>
+							</ul>
+						</div><!--/col-md-3-->
+						<!-- End Link List -->
+
+						<!-- Address -->
+						<div class="col-md-4 map-img" style="margin-bottom: 40px;">
+							<div class="headline">
+								<h2>Contact Us</h2>
+							</div>
+							<address class="md-margin-bottom-40">
+								Unity Hospital <br />
+								Loni, IN <br />
+								Phone: <a href="tel:8010358595"> 801 035 8595 </a><br />
+								Email: <a href="mailto:unityhospital@gmail.com ">unityhospital@gmail.com </a>
+							</address>
+						</div><!--/col-md-3-->
+						<!-- End Address -->
+					</div>
+				</div>
+			</div><!--/footer-->
+		</div>
+		<!--=== End Footer ===-->
+	</div><!--/wrapper-->
+
+</body>
+
+</html>
